@@ -1,0 +1,23 @@
+<nav id="main-nav" class="navbar navbar-default navbar-fixed-top">
+  <div class="navbar-header">
+    <a class="navbar-brand" href="#">NFL Pick'em</a>
+  </div>
+  <ul class="nav navbar-nav">
+    <li routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}"><a routerLink="" (click)="navClicked('home')">Home</a></li>
+    <li routerLinkActive="active"><a routerLink="/secondPot" (click)="navClicked('second-pot')">Second Pot</a></li>
+    <li routerLinkActive="active"><a routerLink="/picks">My Picks</a></li>
+    <li routerLinkActive="active"><a routerLink="/groupPicks">Group Picks</a></li>
+    <li routerLinkActive="active"><a routerLink="/weeklyWinners">Weekly Winners</a></li>
+    <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Commish Tools<span class="caret"></span></a>
+      <ul class="dropdown-menu">
+        <li><a href="#">Player Admin</a></li>
+        <li><a href="#">Game Admin</a></li>
+        <li><a href="#">Settings</a></li>
+      </ul>
+    </li>
+  </ul>
+  <ul class="nav navbar-nav navbar-right">
+    <li><a href="#"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
+    <li><a (click)="loginClicked()"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+  </ul>
+</nav>
