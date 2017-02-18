@@ -3,8 +3,8 @@
     <a class="navbar-brand" href="#">NFL Pick'em</a>
   </div>
   <ul class="nav navbar-nav">
-    <li routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}"><a routerLink="" (click)="navClicked('home')">Home</a></li>
-    <li routerLinkActive="active"><a routerLink="/secondPot" (click)="navClicked('second-pot')">Second Pot</a></li>
+    <li routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}"><a routerLink="">Home</a></li>
+    <li routerLinkActive="active"><a routerLink="/secondPot">Second Pot</a></li>
     <li routerLinkActive="active"><a routerLink="/picks">My Picks</a></li>
     <li routerLinkActive="active"><a routerLink="/groupPicks">Group Picks</a></li>
     <li routerLinkActive="active"><a routerLink="/weeklyWinners">Weekly Winners</a></li>
@@ -18,6 +18,29 @@
   </ul>
   <ul class="nav navbar-nav navbar-right">
     <li><a href="#"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
-    <li><a (click)="loginClicked()"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+    <li><a (click)="validationModal.open()"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
   </ul>
 </nav>
+
+<modal [animation]="animation" [keyboard]="keyboard" [backdrop]="backdrop" (onClose)="closed()" (onDismiss)="dismissed()"
+       (onOpen)="opened()" [cssClass]="cssClass" #validationModal>
+  <form #modalForm="ngForm">
+    <modal-header [show-close]="true">
+      <h4 class="modal-title">Login</h4>
+    </modal-header>
+    <modal-body>
+      <div class="form-group">
+        <label for="username">Username</label>
+        <input type="text" class="form-control" required [(ngModel)]="creds.username" name="username" id="username">
+      </div>
+      <div class="form-group">
+        <label for="password">Password</label>
+        <input type="password" class="form-control" required [(ngModel)]="creds.password" name="password" id="password">
+      </div>
+    </modal-body>
+    <modal-footer>
+      <button type="button" class="btn btn-default" data-dismiss="modal" (click)="validationModal.dismiss()">Cancel</button>
+      <button type="button" class="btn btn-primary" [disabled]="!modalForm.valid" (click)="validationModal.close()">Save</button>
+    </modal-footer>
+  </form>
+</modal>

@@ -1,31 +1,56 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, ViewChild, OnInit, ViewEncapsulation} from '@angular/core';
 import {Router} from "@angular/router";
 import {AuthService} from "./auth.service";
+import { ModalComponent } from 'ng2-bs3-modal/ng2-bs3-modal';
+
+export class LoginCreds {
+  constructor(
+    public username: string,
+    public password: string,
+    public token: string
+  ) { }
+}
 
 @Component({
   selector: 'main-nav',
   templateUrl: 'app/html/main-nav.component.html',
-  styleUrls: [`app/css/main-nav.component.css`]
+  styleUrls: [`app/css/main-nav.component.css`],
+
+  encapsulation: ViewEncapsulation.None
 })
+
 export class MainNavComponent implements OnInit {
 
-  activeLink = 'home';
+  @ViewChild('modal')
+  modal: ModalComponent;
+  selected: string;
+  output: string;
+  creds: LoginCreds = new LoginCreds(null,null,null);
 
   constructor(
     private router: Router,
     private authService: AuthService
   ) { }
 
-  navClicked(navlink: string) {
-    console.log('Clicked on ' + navlink);
 
-    this.activeLink = navlink;
+  closed() {
+    this.output = '(closed) ' + this.selected;
   }
 
-  loginClicked() {
-    console.log('Login clicked');
+  dismissed() {
+    this.output = '(dismissed)';
+  }
 
-    // TODO: open login modal here
+  opened() {
+    this.output = '(opened)';
+  }
+
+  navigate() {
+    this.router.navigateByUrl('/hello');
+  }
+
+  open() {
+    this.modal.open();
   }
 
   ngOnInit() {
