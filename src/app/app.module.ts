@@ -5,7 +5,7 @@ import {FormsModule}   from '@angular/forms';
 import { routing }        from './app.routing';
 
 import { AppComponent }  from './app.component';
-import {LoginFormComponent} from "./login-form.component";
+import {LoginModalComponent} from "./login-modal.component";
 import {HomeComponent} from "./home.component";
 import {MainNavComponent} from "./main-nav.component";
 import {SecondPotComponent} from "./second-pot.component";
@@ -24,7 +24,7 @@ import {CommonModule} from "@angular/common";
   ],
   declarations: [
     AppComponent,
-    LoginFormComponent,
+    LoginModalComponent,
     HomeComponent,
     MainNavComponent,
     SecondPotComponent

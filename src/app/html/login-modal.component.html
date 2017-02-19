@@ -1,20 +1,22 @@
-<!-- Modal -->
-<div id="loginModal" class="modal fade" role="dialog">
-  <div class="modal-dialog">
-
-    <!-- Modal content-->
-    <div class="modal-content">
-      <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal">&times;</button>
-        <h4 class="modal-title">Login</h4>
+<modal [animation]="animation" [keyboard]="keyboard" [backdrop]="backdrop" (onClose)="closed()" (onDismiss)="dismissed()"
+       (onOpen)="opened()" [cssClass]="cssClass" #loginModal>
+  <form #modalForm="ngForm">
+    <modal-header [show-close]="true">
+      <h4 class="modal-title">Login</h4>
+    </modal-header>
+    <modal-body>
+      <div class="form-group">
+        <label for="username">Username</label>
+        <input type="text" class="form-control" required [(ngModel)]="creds.username" name="username" id="username">
       </div>
-      <div class="modal-body">
-        <p>Login form will go here.</p>
+      <div class="form-group">
+        <label for="password">Password</label>
+        <input type="password" class="form-control" required [(ngModel)]="creds.password" name="password" id="password">
       </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-      </div>
-    </div>
-
-  </div>
-</div>
+    </modal-body>
+    <modal-footer>
+      <button type="button" class="btn btn-default" data-dismiss="modal" (click)="loginModal.dismissed()">Cancel</button>
+      <button type="button" class="btn btn-primary" [disabled]="!modalForm.valid" (click)="onSubmit()">Save</button>
+    </modal-footer>
+  </form>
+</modal>
