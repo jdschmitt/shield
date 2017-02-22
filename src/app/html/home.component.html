@@ -1,1 +1,26 @@
-<div><h1>Home</h1></div>
+<div>
+  <div id="home-header" class="row"><div class="week-header col-sm-12">Week {{currentWeek}}</div></div>
+  <div id="home-body" class="row">
+    <div id="ranked-list-cell" class="col-sm-6">
+      <table class="table">
+        <thead>
+          <tr>
+            <th>Rank</th>
+            <th>Player</th>
+            <th>Season Total</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let player of players; let i = index;">
+            <td>{{ player.rank }}</td>
+            <td>{{ player.firstName }} {{ player.lastName }}</td>
+            <td>{{ player.total }}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div id="commish-note-cell" class="col-sm-6">
+      Commish Note
+    </div>
+  </div>
+</div>
