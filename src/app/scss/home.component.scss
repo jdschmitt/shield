@@ -1,0 +1,22 @@
+#home-header {
+  text-align: center;
+  margin-top: 25px;
+}
+
+#ranked-list-cell {
+  tr {
+    width: 100%;
+    display: inline-table;
+    table-layout: fixed;
+
+  }
+
+  table{
+    display: -moz-groupbox;
+  }
+  tbody{
+    overflow-y: scroll;
+    height: 500px;
+    position: absolute;
+  }
+}

@@ -1,20 +1,16 @@
 #home-header {
   text-align: center;
-  margin-top: 25px;
-}
+  margin-top: 25px; }
 
-tr {
+#ranked-list-cell tr {
   width: 100%;
   display: inline-table;
-  table-layout: fixed;
+  table-layout: fixed; }
 
-}
+#ranked-list-cell table {
+  display: -moz-groupbox; }
 
-table{
-  display: -moz-groupbox;
-}
-tbody{
+#ranked-list-cell tbody {
   overflow-y: scroll;
-  height: 600px;
-  position: absolute;
-}
+  height: 500px;
+  position: absolute; }
