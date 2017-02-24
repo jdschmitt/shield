@@ -13,6 +13,7 @@ export class HomeComponent implements OnInit {
 
   currentWeek: number = -1;
   players: any[];
+  commishNote: string;
 
   constructor(
     private router: Router,
@@ -30,6 +31,11 @@ export class HomeComponent implements OnInit {
     this.playersService.getRankedPlayers().subscribe(
       data => this.players = data,
       error => console.log("Error calling /rankedPlayers: ", error)
+    );
+
+    this.settingsService.getSettings().subscribe(
+      data => this.commishNote = data.commishNote,
+      error => console.log("Error calling /settings: ", error)
     );
 
     // TODO If not authenticated, redirect to /login

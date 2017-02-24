@@ -7,11 +7,16 @@ import {BaseService} from "./base.service";
 export class SettingsService extends BaseService{
 
   URIs = {
-    currentWeek: '/currentWeek'
+    currentWeek: '/currentWeek',
+    settings: '/settings'
   }
 
   getCurrentWeek() {
     return this.get(this.URIs.currentWeek).map((res:Response) => res.json());
+  }
+
+  getSettings() {
+    return this.get(this.URIs.settings).map((res:Response) => res.json());
   }
 
 }

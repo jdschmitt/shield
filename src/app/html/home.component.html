@@ -2,7 +2,7 @@
   <div id="home-header" class="row"><div class="week-header col-sm-12">Week {{currentWeek}}</div></div>
   <div id="home-body" class="row">
     <div id="ranked-list-cell" class="col-sm-6">
-      <table class="table">
+      <table class="table table-striped">
         <thead>
           <tr>
             <th>Rank</th>
@@ -20,7 +20,10 @@
       </table>
     </div>
     <div id="commish-note-cell" class="col-sm-6">
-      Commish Note
+      <div class="panel panel-info">
+        <div class="panel-heading">Commish Note</div>
+        <div class="panel-body">{{commishNote}}</div>
+      </div>
     </div>
   </div>
 </div>
