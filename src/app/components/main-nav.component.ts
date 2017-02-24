@@ -1,6 +1,6 @@
 import {Component, ViewChild, OnInit} from '@angular/core';
 import {Router} from "@angular/router";
-import {AuthService} from "./auth.service";
+import {AuthService} from "../services/auth.service";
 import { LoginModalComponent } from './login-modal.component';
 
 @Component({

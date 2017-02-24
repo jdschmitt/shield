@@ -1,5 +1,5 @@
 import {Component, ViewChild, OnInit, ViewEncapsulation} from '@angular/core';
-import {AuthService} from "./auth.service";
+import {AuthService} from "../services/auth.service";
 import {Router} from "@angular/router";
 import { ModalComponent } from 'ng2-bs3-modal/ng2-bs3-modal';
 

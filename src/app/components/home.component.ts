@@ -1,8 +1,8 @@
 import {Component, OnInit} from '@angular/core';
 import {Router} from "@angular/router";
-// import {AuthService} from "./auth-service";
-import {SettingsService} from "./services/settings.service";
-import {PlayersService} from "./services/players.service";
+// import {AuthService} from "../services/auth-service";
+import {SettingsService} from "../services/settings.service";
+import {PlayersService} from "../services/players.service";
 
 @Component({
   selector: 'home',

@@ -5,12 +5,12 @@ import { HttpModule, JsonpModule } from '@angular/http';
 
 import { routing }        from './app.routing';
 
-import { AppComponent }  from './app.component';
-import { LoginModalComponent } from "./login-modal.component";
-import { HomeComponent } from "./home.component";
-import { MainNavComponent } from "./main-nav.component";
-import { SecondPotComponent } from "./second-pot.component";
-import { AuthService } from "./auth.service";
+import { AppComponent }  from './components/app.component';
+import { LoginModalComponent } from "./components/login-modal.component";
+import { HomeComponent } from "./components/home.component";
+import { MainNavComponent } from "./components/main-nav.component";
+import { SecondPotComponent } from "./components/second-pot.component";
+import { AuthService } from "./services/auth.service";
 import { SettingsService } from "./services/settings.service";
 import { PlayersService } from "./services/players.service";
 

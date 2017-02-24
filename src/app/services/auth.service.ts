@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import {LoginCreds} from "./login-form.component";
+import {LoginCreds} from "../components/login-modal.component";
 
 export class AuthResponse {
   success: boolean;
